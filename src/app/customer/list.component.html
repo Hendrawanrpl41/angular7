@@ -1,0 +1,29 @@
+<button class="btn-outline-primary" (click)="addData()">Input Data</button>
+<app-form *ngIf="showDetail"  [customer]='selectedCustomer' (result)="prosesResult($event)"></app-form>
+
+<table class="table table-hover">
+  <tr>
+    <td>No</td>
+    <td>FirstName</td>
+    <td>LastName</td>
+    <td>phoneType</td>
+    <td>phoneNumber</td>
+    <td>username</td>
+    <td>password</td>
+    <td>birthDate</td>
+    <td>Action</td>
+  </tr>
+
+  <tbody *ngFor="let cust of listCustomer" >
+      <td><a (click)="selectCustomer(cust)">{{cust.customerNumber}}</a> </td>
+      <td>{{cust.firstName}}</td>
+      <td>{{cust.lastName}}</td>
+      <td>{{cust.phoneType}}</td>
+      <td>{{cust.phoneNumber}}</td>
+      <td>{{cust.username}}</td>
+      <td>{{cust.password}}</td>
+      <td>{{cust.birthDate}}</td>
+      <td><a (click)="viewAccount(cust)">view account</a> </td>
+  </tbody>
+  </table>
+  <!-- <app-combo-customer (customer) = ' setSelectedCustomer ($event) '></app-combo-customer> -->

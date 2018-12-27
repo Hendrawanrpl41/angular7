@@ -1,0 +1,15 @@
+<form [formGroup]='transactionFormGroup'>
+  <!-- <input formControlName="id"> -->
+  <input class="form-control" placeholder="type" formControlName='type'><br>
+  <input class="form-control" placeholder="amount" formControlName='amount'><br>
+  <input class="form-control" placeholder="amountSign" formControlName='amountSign'><br>
+  <!-- <input class="form-control" placeholder="customerNumber" formControlName="customerNumber"> -->
+
+  <select class="form-control" formControlName="accountNumber">
+    <option *ngFor="let acc of Listaccount" [ngValue]="acc.accountNumber">{{acc.accountNumber}}</option>
+  </select>
+  <button class="btn-outline-success" (click)='updateData($event)'>Update</button>
+  <button class="btn-outline-success" (click)='createData($event)'>Input</button>
+  <button class="btn-outline-danger" (click)="deleteData(transaction.id)">Delete</button>
+  <!-- <button (click)="cancel($event)">Cancel</button> -->
+</form>

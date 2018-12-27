@@ -1,0 +1,21 @@
+<p>
+  <input class="form-control-sm" placeholder="fist Name " [(ngModel)]='firstName'><br>
+  <input class="form-control-sm" placeholder="Last Name" [(ngModel)]='lastName'><br>
+  <input class="form-control-sm" type="date" placeholder="Birth Date" [(ngModel)]="birthDate"><br>
+  <input class="form-control-sm" placeholder="phone Type" [(ngModel)]="phoneType"><br>
+  <input class="form-control-sm" type="number" placeholder="phone Number" [(ngModel)]="phoneNumber"><br>
+  <input class="form-control-sm" placeholder="username" [(ngModel)]="username"><br>
+  <input class="form-control-sm" placeholder="password" [(ngModel)]="password"><br>
+  <!-- <button (click)="tampil()">Simpan</button> -->
+  <button (click)="create(customer)">Create</button>
+</p>
+
+<p>
+<button class='bnt btn-outline-primary' (click)="muncul()">muncul</button>
+<!-- <button (click)="hilang()">hilang</button> -->
+
+</p>
+<app-test *ngIf="showChild" [nama]='firstName' [nama2]='lastName' (tutup)='parentdata($event)'></app-test>
+
+
+

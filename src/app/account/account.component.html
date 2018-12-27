@@ -1,0 +1,15 @@
+<form [formGroup]='accountFormGroup'>
+
+  <!-- <input class="form-control" placeholder="accountNumber" formControlName='accountNumber'><br> -->
+  <input class="form-control" type="date" placeholder="openDate" formControlName='openDate'><br>
+  <input class="form-control" placeholder="balance" formControlName='balance'><br>
+  <!-- <input class="form-control" placeholder="customerNumber" formControlName="customerNumber"> -->
+  <!-- <app-combo-customer (customer)=' setSelectedCustomer ($event) '></app-combo-customer> -->
+  <select class="form-control" formControlName="customerNumber">
+    <option *ngFor="let cus of ListCustomer" [ngValue]="cus.customerNumber" >{{cus.customerNumber}}</option>
+  </select>
+  <button class="btn-outline-success" (click)='updateData($event)'>Update</button>
+  <button class="btn-outline-success" (click)='createData($event)'>Input</button>
+  <button class="btn-outline-danger" (click)="deleteData(account.accountNumber)">Delete</button>
+  <!-- <button (click)="cancel($event)">Cancel</button> -->
+</form>

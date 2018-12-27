@@ -1,0 +1,18 @@
+
+<form [formGroup] = 'customerFormGroup' >
+
+    <input class="form-control" placeholder="fist Name" formControlName='firstName'><br>
+    <input class="form-control" placeholder="Last Name" formControlName='lastName'><br>
+    <input class="form-control" type="date" placeholder="Brith Date" formControlName="birthDate"><br>
+    <input class="form-control" placeholder="phone Type" formControlName="phoneType"><br>
+    <input class="form-control" type="number" placeholder="phone Number" formControlName="phoneNumber"><br>
+    <input class="form-control" placeholder="username" formControlName="username"><br>
+    <input class="form-control" placeholder="password" formControlName="password"><br>
+    <button class="btn-outline-primary" (click)='submitData($event)' [disabled]='customerFormGroup.invalid'>update</button>
+    <!-- <button class="btn-outline-primary" (click)='updateData($event)'>Update</button> -->
+    <button class="btn-outline-success" (click)='createData($event)'>Input</button>
+    <button class="btn-outline-danger" [value]='customer.customerNumber' (click)="deleteData(customer.customerNumber)">Delete</button>
+    <button (click)="cancel($event)">Cancel</button>
+</form>
+
+

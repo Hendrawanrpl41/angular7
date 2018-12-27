@@ -1,0 +1,23 @@
+<button class="btn-outline-primary" (click)="addData()">Input Data</button>
+<app-transaction *ngIf="showDetail" [transaction]='selectedTransaction' (result)="prosesResult($event)"></app-transaction>
+
+<table class="table table-hover">
+  <tr>
+    <td>No</td>
+    <td>type</td>
+    <td>amount</td>
+    <td>amountSign</td>
+    <td>accountNumber</td>
+  </tr>
+
+  <tbody *ngFor="let trx of listTransaction">
+    <tr>
+      <td><a (click)="selectTransaction(trx)">{{trx.id}}</a> </td>
+      <td>{{trx.type}}</td>
+      <td>{{trx.amount}}</td>
+      <td>{{trx.amountSign}}</td>
+      <td>{{trx.account.accountNumber}}</td>
+
+    </tr>
+  </tbody>
+</table>

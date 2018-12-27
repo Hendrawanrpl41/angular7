@@ -1,0 +1,21 @@
+<button class="btn-outline-primary" (click)="addData()">Input Data</button>
+<app-account *ngIf="showDetail" [account]='selectedAccount' (result)="prosesResult($event)"></app-account>
+
+<table class="table table-hover">
+  <tr>
+    <td>No</td>
+    <td>openDate</td>
+    <td>balance</td>
+    <td>customerNumber</td>
+  </tr>
+
+  <tbody *ngFor="let acc of listAccount" >
+    <tr>
+      <td><a (click)="selectAccount(acc)">{{acc.accountNumber}}</a> </td>
+      <td>{{acc.openDate}}</td>
+      <td>{{acc.balance}}</td>
+      <td>{{acc.customer.customerNumber}}</td>
+      <td><a (click)="viewTransaction(acc)">viewTransaction</a> </td>
+    </tr>
+  </tbody>
+</table>
