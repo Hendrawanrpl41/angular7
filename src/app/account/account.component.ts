@@ -55,7 +55,6 @@ export class AccountComponent implements OnInit {
     account.openDate = this.accountFormGroup.controls['openDate'].value;
     account.balance = this.accountFormGroup.controls['balance'].value;
 
-    account.customerNumber = this.accountFormGroup.controls['customerNumber'].value;
     customer.customerNumber = this.accountFormGroup.controls['customerNumber'].value;
 
     account.customer = customer;
@@ -78,7 +77,6 @@ export class AccountComponent implements OnInit {
     account.accountNumber = this.accountFormGroup.controls['accountNumber'].value;
     account.openDate = this.accountFormGroup.controls['openDate'].value;
     account.balance = this.accountFormGroup.controls['balance'].value;
-    account.customerNumber = this.accountFormGroup.controls['customerNumber'].value;
     customer.customerNumber = this.accountFormGroup.controls['customerNumber'].value;
 
     account.customer = customer;
@@ -115,7 +113,7 @@ export class AccountComponent implements OnInit {
     this.accountService.getListcus().subscribe(
       respone => {
         console.log(JSON.stringify(respone));
-        Object.assign(this.ListCustomer, respone);
+        Object.assign(this.ListCustomer, respone['values']);
       },
       err => {
         alert('error' + JSON.stringify(err));

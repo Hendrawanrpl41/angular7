@@ -44,7 +44,7 @@ export class ListAccountComponent implements OnInit {
       respone => {
         console.log(JSON.stringify(respone));
         this.listAccount = [];
-        Object.assign(this.listAccount, respone);
+        Object.assign(this.listAccount, respone['values']);
       },
       err => {
         alert('error' + JSON.stringify(err));

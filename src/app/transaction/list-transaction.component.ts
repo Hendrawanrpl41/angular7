@@ -38,10 +38,10 @@ export class ListTransactionComponent implements OnInit {
   }
   listData(account?) {
     this.transactionService.getList(account).subscribe(
-      respone => {
-        console.log(JSON.stringify(respone));
+      response => {
+        console.log(JSON.stringify(response));
         this.listTransaction = [];
-        Object.assign(this.listTransaction, respone);
+        Object.assign(this.listTransaction, response['values']);
       },
       err => {
         alert('error' + JSON.stringify(err));

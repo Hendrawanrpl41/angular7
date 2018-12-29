@@ -46,7 +46,7 @@ export class ListComponent implements OnInit {
       respone => {
         console.log(JSON.stringify(respone));
         this.listCustomer = [];
-        Object.assign(this.listCustomer, respone);
+        Object.assign(this.listCustomer, respone['values']);
       },
       err => {
         alert('error' + JSON.stringify(err));
@@ -64,6 +64,9 @@ export class ListComponent implements OnInit {
   }
   // untuk lempar data ke account,
   viewAccount(customer: Customer) {
+    console.log('====================================');
+    console.log(customer);
+    console.log('====================================');
     this.router.navigate([
       // routing ke halaman list account
       '/listAccount',

@@ -56,7 +56,6 @@ export class TransactionComponent implements OnInit {
   createData() {
     const account: Account = new Account();
     const transaction = new Transaction();
-    transaction.id = this.transactionFormGroup.controls['id'].value;
     transaction.type = this.transactionFormGroup.controls['type'].value;
     transaction.amount = this.transactionFormGroup.controls['amount'].value;
     transaction.amountSign = this.transactionFormGroup.controls['amountSign'].value;
@@ -85,7 +84,6 @@ export class TransactionComponent implements OnInit {
     transaction.type = this.transactionFormGroup.controls['type'].value;
     transaction.amount = this.transactionFormGroup.controls['amount'].value;
     transaction.amountSign = this.transactionFormGroup.controls['amountSign'].value;
-    account.accountNumber = this.transactionFormGroup.controls['accountNumber'].value;
     transaction.account = account;
 
     console.log(transaction);
@@ -121,7 +119,7 @@ export class TransactionComponent implements OnInit {
     this.transactionService.getListacc().subscribe(
       respone => {
         console.log(JSON.stringify(respone));
-        Object.assign(this.Listaccount, respone);
+        Object.assign(this.Listaccount, respone['values']);
       },
       err => {
         alert('error' + JSON.stringify(err));
